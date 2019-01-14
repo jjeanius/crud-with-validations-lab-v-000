@@ -1,8 +1,12 @@
-<% form_for @song do |f| %>
-<%= f.text_field song_title %>
-<%= f.text_field song_artist_name %>
-<%= f.text_field song_release_year %>
-<%= f.text_field song_released %>
-<%= f.text_field song_genre %>
-<%= button_to "Edit" %>
-<% end %>
+<h2>Editing "<%= @song.title %>"</h2>
+<%= form_tag song_path(@song), method: "songh" do %>
+  <div class="field<%= ' field_with_errors' if @song.errors[:title].any?%>">">
+    <%= label_tag "title", "Title" %>
+    <%= text_field_tag "title", @song.title %>
+  </div>
+
+  <div class="field<%= ' field_with_errors' if @song.errors[:category].any?%>">">
+    <%= label_tag "category", "Category" %>
+    <p>Must be either "Fiction" or "Non-Fiction".</p>
+    <%= text_field_tag "category", @song.category %>
+    <p>
