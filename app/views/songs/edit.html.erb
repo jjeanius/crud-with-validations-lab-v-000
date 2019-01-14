@@ -1,9 +1,9 @@
 <%= form_tag "/song" do %>
-  Title: <%= text_field_tag "name", @song.title %><br>
-  Artist Name: <%= text_field_tag "artist_name", @song.artist_name %>
-  Release Year: <%= text_field_tag "release_year", @song.release_year %>
-  Released: <%= text_field_tag "released", @song.released %>
-  Genre: <%= text_field_tag "genre", @song.genre %>
+  Title: <%= text_field_tag @song.title %><br>
+  Artist Name: <%= text_field_tag @song.artist_name %>
+  Release Year: <%= text_field_tag @song.release_year %>
+  Released: <%= text_field_tag @song.released %>
+  Genre: <%= text_field_tag @song.genre %>
 
   <%= button_to "Create Person" %>
 
