@@ -25,8 +25,6 @@ class SongsController < ApplicationController
     @song = Song.find(params[:id])
   end
 
-
-
   def edit
     @song = Song.find(params[:id])
   end
