@@ -1,12 +1,9 @@
-<h2>Editing "<%= @song.title %>"</h2>
-<%= form_tag song_path(@song), method: "songh" do %>
-  <div class="field<%= ' field_with_errors' if @song.errors[:title].any?%>">">
-    <%= label_tag "title", "Title" %>
-    <%= text_field_tag "title", @song.title %>
-  </div>
+<%= form_tag "/song" do %>
+  Title: <%= text_field_tag "name", @song.title %><br>
+  Artist Name: <%= text_field_tag "artist_name", @song.artist_name %>
+  Release Year: <%= text_field_tag "release_year", @song.release_year %>
+  Released: <%= text_field_tag "released", @song.released %>
+  Genre: <%= text_field_tag "genre", @song.genre %>
 
-  <div class="field<%= ' field_with_errors' if @song.errors[:category].any?%>">">
-    <%= label_tag "category", "Category" %>
-    <p>Must be either "Fiction" or "Non-Fiction".</p>
-    <%= text_field_tag "category", @song.category %>
-    <p>
+  <%= button_to "Create Person" %>
+n 
